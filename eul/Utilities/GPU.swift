@@ -40,9 +40,11 @@ extension GPU {
         }
 
         return plistArray.first?.items.compactMap {
-            guard $0.isGPU, let deviceId = $0.deviceId else {
+            guard $0.isGPU else {
                 return nil
             }
+            // For Apple Silicon GPUs, use model name as identifier if device-id is not available
+            let deviceId = $0.deviceId ?? $0.model ?? "unknown"
             return GPU(deviceId: deviceId, model: $0.model, vendor: $0.vendor)
         }
     }
@@ -55,9 +57,9 @@ extension GPU {
         }
 
         return propertyList.compactMap {
-            guard let pciMatch = $0["IOPCIMatch"] as? String ?? $0["IOPCIPrimaryMatch"] as? String else {
-                return nil
-            }
+            // For Intel GPUs, use IOPCIMatch for device identification
+            // For Apple Silicon, IOPCIMatch may not be available, so use a fallback
+            let pciMatch = $0["IOPCIMatch"] as? String ?? $0["IOPCIPrimaryMatch"] as? String
 
             let statistics = $0["PerformanceStatistics"] as? [String: Any]
 
@@ -94,8 +96,12 @@ extension GPU {
                 temperature = SmcControl.shared.gpuProximityTemperature
             }
 
+            // For Apple Silicon, use "apple" as pciMatch if not available
+            // This allows matching with GPU devices that use model name as deviceId
+            let finalPciMatch = pciMatch ?? "apple"
+
             return Statistic(
-                pciMatch: pciMatch,
+                pciMatch: finalPciMatch,
                 usagePercentage: finalUsage,
                 temperature: temperature,
                 coreClock: statistics?["Core Clock(MHz)"] as? Int,
