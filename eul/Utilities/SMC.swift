@@ -479,6 +479,16 @@ public enum TemperatureSensors {
     public static let CPU_0_PROXIMITY =
         TemperatureSensor(name: "CPU_0_PROXIMITY",
                           code: FourCharCode(fromStaticString: "TC0P"))
+
+    // Apple Silicon (M-series) temperature sensors
+    public static let CPU_PCORE = TemperatureSensor(name: "CPU_PCORE",
+                                                    code: FourCharCode(fromStaticString: "Tp09"))
+    public static let CPU_ECORE = TemperatureSensor(name: "CPU_ECORE",
+                                                    code: FourCharCode(fromStaticString: "Tp0T"))
+    public static let CPU_PACKAGE = TemperatureSensor(name: "CPU_PACKAGE",
+                                                      code: FourCharCode(fromStaticString: "Tp05"))
+    public static let GPU_APPLE_SILICON = TemperatureSensor(name: "GPU_APPLE_SILICON",
+                                                            code: FourCharCode(fromStaticString: "Tg05"))
     public static let ENCLOSURE_BASE_0 =
         TemperatureSensor(name: "ENCLOSURE_BASE_0",
                           code: FourCharCode(fromStaticString: "TB0T"))
@@ -541,6 +551,10 @@ public enum TemperatureSensors {
                              CPU_0_DIODE.code: CPU_0_DIODE,
                              CPU_0_HEATSINK.code: CPU_0_HEATSINK,
                              CPU_0_PROXIMITY.code: CPU_0_PROXIMITY,
+                             CPU_PCORE.code: CPU_PCORE,
+                             CPU_ECORE.code: CPU_ECORE,
+                             CPU_PACKAGE.code: CPU_PACKAGE,
+                             GPU_APPLE_SILICON.code: GPU_APPLE_SILICON,
                              ENCLOSURE_BASE_0.code: ENCLOSURE_BASE_0,
                              ENCLOSURE_BASE_1.code: ENCLOSURE_BASE_1,
                              ENCLOSURE_BASE_2.code: ENCLOSURE_BASE_2,

@@ -26,3 +26,10 @@ jobs:
         run: sudo xcode-select -s /Applications/Xcode_12.4.app
       - name: Build
         run: xcodebuild -scheme eul -project ./eul.xcodeproj -sdk macosx build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO" | xcpretty && exit ${PIPESTATUS[0]}
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        if: success()
+        with:
+          name: eul-app
+          path: ~/Library/Developer/Xcode/DerivedData/eul-*/Build/Products/Debug/eul.app
+          retention-days: 7

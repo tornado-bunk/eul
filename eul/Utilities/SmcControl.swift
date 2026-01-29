@@ -17,15 +17,42 @@ class SmcControl: Refreshable {
     var fans: [FanData] = []
     var tempUnit: TemperatureUnit = .celius
     var cpuDieTemperature: Double? {
-        sensors.first(where: { $0.sensor.name == "CPU_0_DIE" })?.temp
+        // Try Intel sensors first
+        if let temp = sensors.first(where: { $0.sensor.name == "CPU_0_DIE" })?.temp, temp > 0 {
+            return temp
+        }
+        // Fallback to Apple Silicon sensors
+        if let temp = sensors.first(where: { $0.sensor.name == "CPU_PCORE" })?.temp, temp > 0 {
+            return temp
+        }
+        if let temp = sensors.first(where: { $0.sensor.name == "CPU_PACKAGE" })?.temp, temp > 0 {
+            return temp
+        }
+        return nil
     }
 
     var cpuProximityTemperature: Double? {
-        sensors.first(where: { $0.sensor.name == "CPU_0_PROXIMITY" })?.temp
+        // Try Intel sensor first
+        if let temp = sensors.first(where: { $0.sensor.name == "CPU_0_PROXIMITY" })?.temp, temp > 0 {
+            return temp
+        }
+        // Fallback to Apple Silicon E-core sensor
+        if let temp = sensors.first(where: { $0.sensor.name == "CPU_ECORE" })?.temp, temp > 0 {
+            return temp
+        }
+        return nil
     }
 
     var gpuProximityTemperature: Double? {
-        sensors.first(where: { $0.sensor.name == "GPU_0_PROXIMITY" })?.temp
+        // Try Intel sensor first
+        if let temp = sensors.first(where: { $0.sensor.name == "GPU_0_PROXIMITY" })?.temp, temp > 0 {
+            return temp
+        }
+        // Fallback to Apple Silicon GPU sensor
+        if let temp = sensors.first(where: { $0.sensor.name == "GPU_APPLE_SILICON" })?.temp, temp > 0 {
+            return temp
+        }
+        return nil
     }
 
     var memoryProximityTemperature: Double? {

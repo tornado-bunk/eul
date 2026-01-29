@@ -55,22 +55,51 @@ extension GPU {
         }
 
         return propertyList.compactMap {
-            guard
-                let pciMatch = $0["IOPCIMatch"] as? String ?? $0["IOPCIPrimaryMatch"] as? String,
-                let statistics = $0["PerformanceStatistics"] as? [String: Any],
-                let usagePercentage = statistics["Device Utilization %"] as? Int ?? statistics["GPU Activity(%)"] as? Int
-            else {
+            guard let pciMatch = $0["IOPCIMatch"] as? String ?? $0["IOPCIPrimaryMatch"] as? String else {
                 return nil
             }
 
-            Print("📊 statistics", statistics)
+            let statistics = $0["PerformanceStatistics"] as? [String: Any]
+
+            // Try to get usage percentage from various keys
+            var usagePercentage: Int? = nil
+            if let stats = statistics {
+                usagePercentage = stats["Device Utilization %"] as? Int ??
+                                 stats["GPU Activity(%)"] as? Int ??
+                                 stats["GPU Core Utilization"] as? Int
+            }
+
+            // For Apple Silicon, try alternative methods if PerformanceStatistics is not available
+            if usagePercentage == nil {
+                // Try IOAcceleratorStatistics2 for Apple Silicon
+                if let stats2 = $0["IOAcceleratorStatistics2"] as? [String: Any] {
+                    usagePercentage = stats2["Device Utilization %"] as? Int ??
+                                     stats2["GPU Activity(%)"] as? Int
+                }
+            }
+
+            // If still no usage data, default to 0 instead of failing
+            let finalUsage = usagePercentage ?? 0
+
+            Print("📊 statistics", statistics ?? [:])
+
+            // Try to get temperature from various sources
+            var temperature: Double? = nil
+            if let stats = statistics {
+                temperature = stats["Temperature(C)"] as? Double
+            }
+
+            // Fallback to SMC for temperature
+            if temperature == nil || temperature == 0 {
+                temperature = SmcControl.shared.gpuProximityTemperature
+            }
 
             return Statistic(
                 pciMatch: pciMatch,
-                usagePercentage: usagePercentage,
-                temperature: statistics["Temperature(C)"] as? Double ?? SmcControl.shared.gpuProximityTemperature,
-                coreClock: statistics["Core Clock(MHz)"] as? Int,
-                memoryClock: statistics["Memory Clock(MHz)"] as? Int
+                usagePercentage: finalUsage,
+                temperature: temperature,
+                coreClock: statistics?["Core Clock(MHz)"] as? Int,
+                memoryClock: statistics?["Memory Clock(MHz)"] as? Int
             )
         }
     }
