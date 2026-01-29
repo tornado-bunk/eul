@@ -62,19 +62,19 @@ extension GPU {
             let statistics = $0["PerformanceStatistics"] as? [String: Any]
 
             // Try to get usage percentage from various keys
-            var usagePercentage: Int? = nil
+            var usagePercentage: Int?
             if let stats = statistics {
-                usagePercentage = stats["Device Utilization %"] as? Int ??
-                                 stats["GPU Activity(%)"] as? Int ??
-                                 stats["GPU Core Utilization"] as? Int
+                usagePercentage = stats["Device Utilization %"] as? Int
+                    ?? stats["GPU Activity(%)"] as? Int
+                    ?? stats["GPU Core Utilization"] as? Int
             }
 
             // For Apple Silicon, try alternative methods if PerformanceStatistics is not available
             if usagePercentage == nil {
                 // Try IOAcceleratorStatistics2 for Apple Silicon
                 if let stats2 = $0["IOAcceleratorStatistics2"] as? [String: Any] {
-                    usagePercentage = stats2["Device Utilization %"] as? Int ??
-                                     stats2["GPU Activity(%)"] as? Int
+                    usagePercentage = stats2["Device Utilization %"] as? Int
+                        ?? stats2["GPU Activity(%)"] as? Int
                 }
             }
 
@@ -84,7 +84,7 @@ extension GPU {
             Print("📊 statistics", statistics ?? [:])
 
             // Try to get temperature from various sources
-            var temperature: Double? = nil
+            var temperature: Double?
             if let stats = statistics {
                 temperature = stats["Temperature(C)"] as? Double
             }
