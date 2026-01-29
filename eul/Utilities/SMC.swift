@@ -197,7 +197,7 @@ public struct SMCParamStruct {
 
     public struct SMCKeyInfoData {
         /// How many bytes written to SMCParamStruct.bytes
-        var dataSize: IOByteCount = 0
+        var dataSize: UInt32 = 0
 
         /// Type of data written to SMCParamStruct.bytes. This lets us know how
         /// to interpret it (translate it to human readable)
@@ -333,7 +333,7 @@ public enum SMCKit {
         let outputStruct = try callDriver(&inputStruct)
 
         return DataType(type: outputStruct.keyInfo.dataType,
-                        size: UInt32(outputStruct.keyInfo.dataSize))
+                        size: outputStruct.keyInfo.dataSize)
     }
 
     /// Get information about the key at index
@@ -355,7 +355,7 @@ public enum SMCKit {
         var inputStruct = SMCParamStruct()
 
         inputStruct.key = key.code
-        inputStruct.keyInfo.dataSize = IOByteCount(UInt32(key.info.size))
+        inputStruct.keyInfo.dataSize = UInt32(key.info.size)
         inputStruct.data8 = SMCParamStruct.Selector.kSMCReadKey.rawValue
 
         let outputStruct = try callDriver(&inputStruct)
@@ -369,7 +369,7 @@ public enum SMCKit {
 
         inputStruct.key = key.code
         inputStruct.bytes = data
-        inputStruct.keyInfo.dataSize = IOByteCount(UInt32(key.info.size))
+        inputStruct.keyInfo.dataSize = UInt32(key.info.size)
         inputStruct.data8 = SMCParamStruct.Selector.kSMCWriteKey.rawValue
 
         _ = try callDriver(&inputStruct)
