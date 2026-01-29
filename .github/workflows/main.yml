@@ -23,7 +23,7 @@ jobs:
         run: swift run -c release swiftformat ../ --lint
         working-directory: ./BuildTools
       - name: Build
-        run: xcodebuild -scheme eul -project ./eul.xcodeproj -sdk macosx build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO" | xcpretty && exit ${PIPESTATUS[0]}
+        run: xcodebuild -scheme eul -project ./eul.xcodeproj build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO" | xcpretty && exit ${PIPESTATUS[0]}
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         if: success()
