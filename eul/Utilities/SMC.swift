@@ -103,6 +103,14 @@ extension Double {
         let sign = bytes.0 & 0x80 == 0 ? 1.0 : -1.0
         self = sign * Double(bytes.0 & 0x7F) // AND to mask sign bit
     }
+
+    init(fromFLT bytes: FLT) {
+        // Convert the SMCBytes to a float value (used on Apple Silicon)
+        let byteArray: [UInt8] = [bytes.0, bytes.1, bytes.2, bytes.3]
+        var resultValue: Float = 0.0
+        memcpy(&resultValue, byteArray, 4)
+        self = Double(resultValue)
+    }
 }
 
 // Thanks to Airspeed Velocity for the great idea!
@@ -597,7 +605,7 @@ public extension SMCKit {
         let keys = try allKeys()
 
         return keys.filter { $0.code.toString().hasPrefix("T") &&
-            $0.info == DataTypes.SP78 &&
+            ($0.info == DataTypes.SP78 || $0.info == DataTypes.FLT) &&
             TemperatureSensors.all[$0.code] == nil
         }
         .map { TemperatureSensor(name: "Unknown", code: $0.code) }
@@ -607,9 +615,17 @@ public extension SMCKit {
     static func temperature(_ sensorCode: FourCharCode,
                             unit: TemperatureUnit = .celius) throws -> Double
     {
-        let data = try readData(SMCKey(code: sensorCode, info: DataTypes.SP78))
+        var temperatureInCelius: Double
 
-        let temperatureInCelius = Double(fromSP78: (data.0, data.1))
+        // Try SP78 format first (Intel Macs)
+        do {
+            let data = try readData(SMCKey(code: sensorCode, info: DataTypes.SP78))
+            temperatureInCelius = Double(fromSP78: (data.0, data.1))
+        } catch SMCError.unknown(kIOReturn: 0, SMCResult: 135) {
+            // If SP78 fails, try FLT format (Apple Silicon Macs)
+            let data = try readData(SMCKey(code: sensorCode, info: DataTypes.FLT))
+            temperatureInCelius = Double(fromFLT: (data.0, data.1, data.2, data.3))
+        }
 
         switch unit {
         case .celius:
