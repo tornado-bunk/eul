@@ -50,7 +50,7 @@ struct NetworkWidgetEntryView: View {
                     .widgetDisplayText()
                 Spacer()
             }
-            .padding(16)
+            .padding(4)
             if !entry.isValid {
                 WidgetNotAvailbleView(text: "widget.not_available".localized())
             }
@@ -65,6 +65,7 @@ struct NetworkWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             NetworkWidgetEntryView(entry: entry)
+                .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("widget.network.title".localized())
         .description("widget.network.description".localized())

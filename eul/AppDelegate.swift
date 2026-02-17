@@ -24,8 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     func applicationDidFinishLaunching(_: Notification) {
         let contentView = ContentView()
         window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            contentRect: NSRect(x: 0, y: 0, width: 500, height: 300),
+            styleMask: [.titled, .closable, .miniaturizable, .fullSizeContentView],
             backing: .buffered, defer: false
         )
         window.center()
@@ -33,8 +33,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         window.contentView = NSHostingView(rootView: contentView.withGlobalEnvironmentObjects())
         window.isReleasedWhenClosed = false
         window.titlebarAppearsTransparent = true
+        window.titleVisibility = .hidden
         window.standardWindowButton(.zoomButton)?.isHidden = true
         window.standardWindowButton(.miniaturizeButton)?.isHidden = true
+        window.backgroundColor = .clear
+        window.isOpaque = false
         window.delegate = self
 
         // comment out for not showing window at login. no proper solution currently, tracking:
@@ -61,12 +64,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             }
         }
 
-        // Disable in Catalina to avoid protential crash
-        if #available(OSX 11, *) {
-            appearanceCancellable = preferenceStore.$appearanceMode.sink { mode in
-                DispatchQueue.main.async {
-                    self.window.appearance = mode.nsAppearance
-                }
+        appearanceCancellable = preferenceStore.$appearanceMode.sink { mode in
+            DispatchQueue.main.async {
+                self.window.appearance = mode.nsAppearance
             }
         }
     }

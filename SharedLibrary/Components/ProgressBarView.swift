@@ -27,12 +27,12 @@ public struct ProgressBarView: View {
     public var body: some View {
         HStack(alignment: .center, spacing: 8) {
             ZStack(alignment: .leading) {
-                RoundedRectangle(cornerRadius: 4)
-                    .frame(width: width, height: 4)
-                    .foregroundColor(.controlBackground)
-                RoundedRectangle(cornerRadius: 4)
-                    .frame(width: width * percentage / 100, height: 4)
-                    .foregroundColor(.primary)
+                RoundedRectangle(cornerRadius: 3)
+                    .frame(width: width, height: 5)
+                    .foregroundColor(.primary.opacity(0.08))
+                RoundedRectangle(cornerRadius: 3)
+                    .frame(width: max(0, width * percentage / 100), height: 5)
+                    .foregroundColor(.primary.opacity(0.6))
             }
             if showText {
                 Text(customText.map { $0 } ?? String(format: "%.1f%%", percentage))

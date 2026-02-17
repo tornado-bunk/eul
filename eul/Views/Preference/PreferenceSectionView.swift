@@ -41,16 +41,29 @@ extension Preference {
         var body: some View {
             HStack(spacing: 8) {
                 Text(section.localizedDescription)
-                    .inlineSection()
+                    .font(.system(size: 12, weight: isActive ? .semibold : .regular))
                 Spacer()
             }
             .padding(.vertical, 8)
             .padding(.horizontal, 12)
-            .background(isActive ? Color.separator : Color.clear)
-            .cornerRadius(4)
+            .background(
+                Group {
+                    if isActive {
+                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                            .fill(.thinMaterial)
+                            .shadow(color: Color.black.opacity(0.06), radius: 3, x: 0, y: 1)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                    .strokeBorder(Color.white.opacity(0.15), lineWidth: 0.5)
+                            )
+                    }
+                }
+            )
             .contentShape(Rectangle())
             .onTapGesture {
-                activeSection = section
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    activeSection = section
+                }
             }
         }
     }

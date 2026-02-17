@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -191,6 +191,25 @@
 		6CFAB80225BC4D9A002F5F48 /* GpuStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFAB80125BC4D9A002F5F48 /* GpuStore.swift */; };
 		6CFAB80625BC526E002F5F48 /* GPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFAB80525BC526E002F5F48 /* GPU.swift */; };
 		6CFAB80925BC55C6002F5F48 /* IOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFAB80825BC55C6002F5F48 /* IOHelper.swift */; };
+		8AE307012F44E37000432783 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7E1EFF2552EB2600287D08 /* WidgetKit.framework */; };
+		8AE307022F44E37000432783 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7E1F012552EB2600287D08 /* SwiftUI.framework */; };
+		8AE3070F2F44E37100432783 /* DiskWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8AE307002F44E37000432783 /* DiskWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8AE307162F44E3D100432783 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AE307152F44E3D100432783 /* Localize_Swift */; };
+		8AE307172F44E3D800432783 /* SharedLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; };
+		8AE307182F44E3D800432783 /* SharedLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8AE3072A2F44E6C600432783 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7E1EFF2552EB2600287D08 /* WidgetKit.framework */; };
+		8AE3072B2F44E6C600432783 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7E1F012552EB2600287D08 /* SwiftUI.framework */; };
+		8AE307382F44E6C700432783 /* GPUWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8AE307292F44E6C600432783 /* GPUWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA00000000000001AABBCCDD /* LiquidGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000002AABBCCDD /* LiquidGlass.swift */; };
+		DD0001000000001AAABB001A /* DiskEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000000000019AABB0019 /* DiskEntry.swift */; };
+		DD0002000000002BAABB002B /* GpuEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000000000029AABB0029 /* GpuEntry.swift */; };
+		DD0003000000003CAABB003C /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = DD0003100000003DAABB003D /* Localize_Swift */; };
+		DD0003200000003EAABB003E /* SharedLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; };
+		DD0003300000003FAABB003F /* SharedLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2688EE2556762B00FB7306 /* SharedLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DD0004000000005AAABB005A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C58053F250CC6B8007F467A /* Localizable.strings */; };
+		DD0004100000005BAABB005B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C58053F250CC6B8007F467A /* Localizable.strings */; };
+		DD0004200000006CAABB006C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
+		DD0004300000006DAABB006D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F8542249FACE200CF0EF8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +283,34 @@
 			remoteGlobalIDString = 6CDEF06B25D69E8100B4C913;
 			remoteInfo = SelfUpdate;
 		};
+		8AE3070D2F44E37100432783 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5F8533249FACE000CF0EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AE306FF2F44E37000432783;
+			remoteInfo = DiskWidgetExtension;
+		};
+		8AE307192F44E3D800432783 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5F8533249FACE000CF0EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C2688ED2556762B00FB7306;
+			remoteInfo = SharedLibrary;
+		};
+		DD0003400000004AAABB004A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5F8533249FACE000CF0EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C2688ED2556762B00FB7306;
+			remoteInfo = SharedLibrary;
+		};
+		8AE307362F44E6C700432783 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5F8533249FACE000CF0EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AE307282F44E6C600432783;
+			remoteInfo = GPUWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -297,6 +344,8 @@
 				6C7E1F0F2552EB2700287D08 /* CpuWidgetExtension.appex in Embed App Extensions */,
 				6C45751425568DCC00A2AD84 /* MemoryWidgetExtension.appex in Embed App Extensions */,
 				6C5DAD0D2556B2FF005F67C3 /* NetworkWidgetExtension.appex in Embed App Extensions */,
+				8AE3070F2F44E37100432783 /* DiskWidgetExtension.appex in Embed App Extensions */,
+				8AE307382F44E6C700432783 /* GPUWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +390,28 @@
 			dstSubfolderSpec = 10;
 			files = (
 				6C2688F62556762B00FB7306 /* SharedLibrary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE3071B2F44E3D800432783 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8AE307182F44E3D800432783 /* SharedLibrary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0003500000004BAABB004B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DD0003300000003FAABB003F /* SharedLibrary.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,13 +594,40 @@
 		6CFAB80525BC526E002F5F48 /* GPU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPU.swift; sourceTree = "<group>"; };
 		6CFAB80825BC55C6002F5F48 /* IOHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOHelper.swift; sourceTree = "<group>"; };
 		6D4A9C042546317200B9BF25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8AE307002F44E37000432783 /* DiskWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DiskWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AE307292F44E6C600432783 /* GPUWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GPUWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA22A43256ED0140065FC1A /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A385DBC325C0FF6300AF7654 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AA00000000000002AABBCCDD /* LiquidGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlass.swift; sourceTree = "<group>"; };
 		B00D5BCE254ABAB900395E7E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBD2B8D02562D42500CB7E90 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D27F239C2564E5B700D3F565 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DD00000000000019AABB0019 /* DiskEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskEntry.swift; sourceTree = "<group>"; };
+		DD00000000000029AABB0029 /* GpuEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpuEntry.swift; sourceTree = "<group>"; };
 		DE4FCF352543102B00C985E7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8AE307122F44E37100432783 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8AE306FF2F44E37000432783 /* DiskWidgetExtension */;
+		};
+		8AE3073B2F44E6C700432783 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8AE307282F44E6C600432783 /* GPUWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8AE307032F44E37000432783 /* DiskWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (8AE307122F44E37100432783 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DiskWidget; sourceTree = "<group>"; };
+		8AE3072C2F44E6C600432783 /* GPUWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (8AE3073B2F44E6C700432783 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = GPUWidget; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6C2688EB2556762B00FB7306 /* Frameworks */ = {
@@ -603,6 +701,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8AE306FD2F44E37000432783 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AE307162F44E3D100432783 /* Localize_Swift in Frameworks */,
+				8AE307022F44E37000432783 /* SwiftUI.framework in Frameworks */,
+				8AE307012F44E37000432783 /* WidgetKit.framework in Frameworks */,
+				8AE307172F44E3D800432783 /* SharedLibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE307262F44E6C600432783 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0003000000003CAABB003C /* Localize_Swift in Frameworks */,
+				8AE3072B2F44E6C600432783 /* SwiftUI.framework in Frameworks */,
+				8AE3072A2F44E6C600432783 /* WidgetKit.framework in Frameworks */,
+				DD0003200000003EAABB003E /* SharedLibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -647,6 +767,7 @@
 			children = (
 				6C16BF0F255428EF00CCF5B7 /* StableWidth.swift */,
 				6C77255B260396CB00B98085 /* PreferredColorScheme.swift */,
+				AA00000000000002AABBCCDD /* LiquidGlass.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -763,6 +884,8 @@
 				6C45750825568DCB00A2AD84 /* MemoryWidget */,
 				6C7CF47125569B8100CEC263 /* BatteryWidget */,
 				6C5DAD012556B2FE005F67C3 /* NetworkWidget */,
+				8AE307032F44E37000432783 /* DiskWidget */,
+				8AE3072C2F44E6C600432783 /* GPUWidget */,
 				6C7E1EFE2552EB2600287D08 /* Frameworks */,
 				6C5F853C249FACE000CF0EF8 /* Products */,
 				6C9667D9250E3D6F00E51ABB /* .swiftformat */,
@@ -779,6 +902,8 @@
 				6C7CF46E25569B8100CEC263 /* BatteryWidgetExtension.appex */,
 				6C5DACFE2556B2FE005F67C3 /* NetworkWidgetExtension.appex */,
 				6CDEF06C25D69E8100B4C913 /* SelfUpdate.app */,
+				8AE307002F44E37000432783 /* DiskWidgetExtension.appex */,
+				8AE307292F44E6C600432783 /* GPUWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -868,6 +993,8 @@
 			children = (
 				6C7CF48425569C6D00CEC263 /* BatteryEntry.swift */,
 				6C7DFDAC255436DD000FCE5C /* CpuEntry.swift */,
+				DD00000000000019AABB0019 /* DiskEntry.swift */,
+				DD00000000000029AABB0029 /* GpuEntry.swift */,
 				6C7CF45C25568E6200CEC263 /* MemoryEntry.swift */,
 				6C5DAD152556B340005F67C3 /* NetworkEntry.swift */,
 				6C68E07F2556643700595F83 /* PreferenceEntry.swift */,
@@ -1098,6 +1225,8 @@
 				6C7CF47C25569B8200CEC263 /* PBXTargetDependency */,
 				6C5DAD0C2556B2FF005F67C3 /* PBXTargetDependency */,
 				6CB3D25625D69FFF008C6627 /* PBXTargetDependency */,
+				8AE3070E2F44E37100432783 /* PBXTargetDependency */,
+				8AE307372F44E6C700432783 /* PBXTargetDependency */,
 			);
 			name = eul;
 			packageProductDependencies = (
@@ -1174,13 +1303,63 @@
 			productReference = 6CDEF06C25D69E8100B4C913 /* SelfUpdate.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8AE306FF2F44E37000432783 /* DiskWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AE307132F44E37100432783 /* Build configuration list for PBXNativeTarget "DiskWidgetExtension" */;
+			buildPhases = (
+				8AE306FC2F44E37000432783 /* Sources */,
+				8AE306FD2F44E37000432783 /* Frameworks */,
+				8AE306FE2F44E37000432783 /* Resources */,
+				8AE3071B2F44E3D800432783 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AE3071A2F44E3D800432783 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8AE307032F44E37000432783 /* DiskWidget */,
+			);
+			name = DiskWidgetExtension;
+			packageProductDependencies = (
+				8AE307152F44E3D100432783 /* Localize_Swift */,
+			);
+			productName = DiskWidgetExtension;
+			productReference = 8AE307002F44E37000432783 /* DiskWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		8AE307282F44E6C600432783 /* GPUWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AE3073C2F44E6C700432783 /* Build configuration list for PBXNativeTarget "GPUWidgetExtension" */;
+			buildPhases = (
+				8AE307252F44E6C600432783 /* Sources */,
+				8AE307262F44E6C600432783 /* Frameworks */,
+				8AE307272F44E6C600432783 /* Resources */,
+				DD0003500000004BAABB004B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD0003600000004CAABB004C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8AE3072C2F44E6C600432783 /* GPUWidget */,
+			);
+			name = GPUWidgetExtension;
+			packageProductDependencies = (
+				DD0003100000003DAABB003D /* Localize_Swift */,
+			);
+			productName = GPUWidgetExtension;
+			productReference = 8AE307292F44E6C600432783 /* GPUWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6C5F8533249FACE000CF0EF8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Gao Sun";
 				TargetAttributes = {
@@ -1205,6 +1384,12 @@
 					};
 					6CDEF06B25D69E8100B4C913 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					8AE306FF2F44E37000432783 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					8AE307282F44E6C600432783 = {
+						CreatedOnToolsVersion = 26.2;
 					};
 				};
 			};
@@ -1251,7 +1436,9 @@
 				6C45750425568DCB00A2AD84 /* MemoryWidgetExtension */,
 				6C7CF46D25569B8100CEC263 /* BatteryWidgetExtension */,
 				6C5DACFD2556B2FE005F67C3 /* NetworkWidgetExtension */,
+				8AE306FF2F44E37000432783 /* DiskWidgetExtension */,
 				6CDEF06B25D69E8100B4C913 /* SelfUpdate */,
+				8AE307282F44E6C600432783 /* GPUWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1325,6 +1512,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8AE306FE2F44E37000432783 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0004200000006CAABB006C /* Assets.xcassets in Resources */,
+				DD0004000000005AAABB005A /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE307272F44E6C600432783 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0004300000006DAABB006D /* Assets.xcassets in Resources */,
+				DD0004100000005BAABB005B /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1382,6 +1587,8 @@
 				6C7CF48525569C6D00CEC263 /* BatteryEntry.swift in Sources */,
 				6C2689012556763700FB7306 /* String.swift in Sources */,
 				6C2689112556773300FB7306 /* CpuEntry.swift in Sources */,
+				DD0001000000001AAABB001A /* DiskEntry.swift in Sources */,
+				DD0002000000002BAABB002B /* GpuEntry.swift in Sources */,
 				6C7CF48A25569E2B00CEC263 /* StandardProvider.swift in Sources */,
 				6C5DAD2F2556B73D005F67C3 /* ByteUnit.swift in Sources */,
 				6C4574FB25567ABC00A2AD84 /* ProgressBarView.swift in Sources */,
@@ -1454,6 +1661,7 @@
 				6C993B8C25178D3B00586C6B /* MemoryMenuBlockView.swift in Sources */,
 				6CEF771424DD95D7007C3640 /* BatteryView.swift in Sources */,
 				6C16BF10255428EF00CCF5B7 /* StableWidth.swift in Sources */,
+				AA00000000000001AABBCCDD /* LiquidGlass.swift in Sources */,
 				6C7DB6E624E82C5A00133B06 /* Preference.swift in Sources */,
 				6C993B8E2517909200586C6B /* MiniSectionView.swift in Sources */,
 				6C02716925BD5719006C54E6 /* GpuView.swift in Sources */,
@@ -1551,6 +1759,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8AE306FC2F44E37000432783 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE307252F44E6C600432783 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1604,6 +1826,26 @@
 			target = 6CDEF06B25D69E8100B4C913 /* SelfUpdate */;
 			targetProxy = 6CB3D25525D69FFF008C6627 /* PBXContainerItemProxy */;
 		};
+		8AE3070E2F44E37100432783 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AE306FF2F44E37000432783 /* DiskWidgetExtension */;
+			targetProxy = 8AE3070D2F44E37100432783 /* PBXContainerItemProxy */;
+		};
+		8AE3071A2F44E3D800432783 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C2688ED2556762B00FB7306 /* SharedLibrary */;
+			targetProxy = 8AE307192F44E3D800432783 /* PBXContainerItemProxy */;
+		};
+		DD0003600000004CAABB004C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C2688ED2556762B00FB7306 /* SharedLibrary */;
+			targetProxy = DD0003400000004AAABB004A /* PBXContainerItemProxy */;
+		};
+		8AE307372F44E6C700432783 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AE307282F44E6C600432783 /* GPUWidgetExtension */;
+			targetProxy = 8AE307362F44E6C700432783 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1656,12 +1898,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 7;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1672,7 +1914,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.SharedLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1687,12 +1929,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 7;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1703,7 +1945,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.SharedLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1721,9 +1963,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = MemoryWidget/MemoryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				CURRENT_PROJECT_VERSION = 53;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MemoryWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1731,8 +1974,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.6.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.MemoryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1747,9 +1990,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = MemoryWidget/MemoryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				CURRENT_PROJECT_VERSION = 53;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MemoryWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1757,8 +2001,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.6.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.MemoryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1773,9 +2017,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = NetworkWidget/NetworkWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				CURRENT_PROJECT_VERSION = 53;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NetworkWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1783,8 +2028,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.6.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.NetworkWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1799,9 +2044,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = NetworkWidget/NetworkWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				CURRENT_PROJECT_VERSION = 53;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NetworkWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1809,8 +2055,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.6.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.NetworkWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1870,7 +2116,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1926,7 +2172,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -1943,11 +2189,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = eul/eul.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1956,8 +2203,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.6.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1974,11 +2221,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = eul/eul.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1987,8 +2235,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.6.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2003,9 +2251,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				CURRENT_PROJECT_VERSION = 53;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BatteryWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2013,8 +2262,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.6.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.BatteryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2029,9 +2278,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				CURRENT_PROJECT_VERSION = 53;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BatteryWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2039,8 +2289,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.6.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.BatteryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2055,9 +2305,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = CpuWidget/CpuWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				CURRENT_PROJECT_VERSION = 53;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CpuWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2065,8 +2316,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.6.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.CpuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2081,9 +2332,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = CpuWidget/CpuWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
-				DEVELOPMENT_TEAM = M8G2RFZVFV;
+				CURRENT_PROJECT_VERSION = 53;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CpuWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2091,8 +2343,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.6.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.CpuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2106,9 +2358,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SelfUpdate/SelfUpdate.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SelfUpdate/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SelfUpdate/Info.plist;
@@ -2116,7 +2370,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.SelfUpdate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2130,9 +2384,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SelfUpdate/SelfUpdate.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SelfUpdate/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SelfUpdate/Info.plist;
@@ -2140,10 +2396,162 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.SelfUpdate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8AE307102F44E37100432783 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = DiskWidget/DiskWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 53;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DiskWidget/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Gao Sun. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.DiskWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8AE307112F44E37100432783 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = DiskWidget/DiskWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 53;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DiskWidget/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Gao Sun. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.6.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.DiskWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8AE307392F44E6C700432783 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				CODE_SIGN_ENTITLEMENTS = GPUWidget/GPUWidget.entitlements;
+				INFOPLIST_FILE = GPUWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GPUWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Gao Sun. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.GPUWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8AE3073A2F44E6C700432783 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = GPUWidget/GPUWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GPUWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GPUWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Gao Sun. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaosun.eul.GPUWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2219,6 +2627,24 @@
 			buildConfigurations = (
 				6CDEF07D25D69E8100B4C913 /* Debug */,
 				6CDEF07E25D69E8100B4C913 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AE307132F44E37100432783 /* Build configuration list for PBXNativeTarget "DiskWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AE307102F44E37100432783 /* Debug */,
+				8AE307112F44E37100432783 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AE3073C2F44E6C700432783 /* Build configuration list for PBXNativeTarget "GPUWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AE307392F44E6C700432783 /* Debug */,
+				8AE3073A2F44E6C700432783 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2305,6 +2731,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6CF28D0725168B8200EBE9CB /* XCRemoteSwiftPackageReference "SystemKit" */;
 			productName = SystemKit;
+		};
+		8AE307152F44E3D100432783 /* Localize_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C86924A251665A50009A784 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
+			productName = Localize_Swift;
+		};
+		DD0003100000003DAABB003D /* Localize_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C86924A251665A50009A784 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
+			productName = Localize_Swift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

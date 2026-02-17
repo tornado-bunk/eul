@@ -21,10 +21,16 @@ struct MenuActionTextView: View {
 
     var body: some View {
         Text(text.localized())
-            .font(.system(size: 11, weight: .regular))
+            .font(.system(size: 11, weight: .medium))
             .foregroundColor(isOnHover ? .primary : .secondary)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 3)
+            .background(
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                    .fill(isOnHover ? Color.primary.opacity(0.08) : Color.clear)
+            )
             .contentShape(Rectangle())
-            .animation(.none)
+            .animation(.easeInOut(duration: 0.15), value: isOnHover)
             .onHover(perform: { hovering in
                 if hovering {
                     uiStore.hoveringID = id

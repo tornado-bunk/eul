@@ -31,7 +31,7 @@ enum IOHelper {
         }
 
         guard IOServiceGetMatchingServices(
-            kIOMasterPortDefault,
+            kIOMainPortDefault,
             IOServiceMatching(service),
             &iterator
         ) == kIOReturnSuccess else {

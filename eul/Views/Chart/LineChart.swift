@@ -74,9 +74,15 @@ struct LineChart: View {
         ZStack {
             Group {
                 closedPath()
-                    .fill(Color.text)
+                    .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color.text.opacity(0.3), Color.text.opacity(0.05)]),
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
                 path()
-                    .stroke(Color.text, style: StrokeStyle(lineWidth: LineChart.minimumLineHeight, lineJoin: .round))
+                    .stroke(Color.text.opacity(0.8), style: StrokeStyle(lineWidth: 1.0, lineJoin: .round))
             }
             .rotationEffect(.degrees(180), anchor: .center)
             .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))

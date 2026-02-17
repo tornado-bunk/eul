@@ -57,7 +57,7 @@ struct CpuWidgetEntryView: View {
                 }
                 Spacer()
             }
-            .padding(16)
+            .padding(4)
             if !entry.isValid {
                 WidgetNotAvailbleView(text: "widget.not_available".localized())
             }
@@ -72,6 +72,7 @@ struct CpuWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             CpuWidgetEntryView(entry: entry)
+                .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("widget.cpu.title".localized())
         .description("widget.cpu.description".localized())

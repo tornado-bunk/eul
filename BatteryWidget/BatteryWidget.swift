@@ -62,7 +62,7 @@ struct BatteryWidgetEntryView: View {
                 }
                 Spacer()
             }
-            .padding(16)
+            .padding(4)
             if !entry.isValid {
                 WidgetNotAvailbleView(text: "widget.not_available".localized())
             }
@@ -77,6 +77,7 @@ struct BatteryWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             BatteryWidgetEntryView(entry: entry)
+                .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("widget.battery.title".localized())
         .description("widget.battery.description".localized())

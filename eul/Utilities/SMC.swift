@@ -312,7 +312,7 @@ public enum SMCKit {
     /// Open connection to the SMC driver. This must be done first before any
     /// other calls
     public static func open() throws {
-        let service = IOServiceGetMatchingService(kIOMasterPortDefault,
+        let service = IOServiceGetMatchingService(kIOMainPortDefault,
                                                   IOServiceMatching("AppleSMC"))
 
         if service == 0 { throw SMCError.driverNotFound }
@@ -604,8 +604,12 @@ public extension SMCKit {
     static func allUnknownTemperatureSensors() throws -> [TemperatureSensor] {
         let keys = try allKeys()
 
+        // Accept any type for temperature keys starting with "T"
+        // Apple Silicon uses various formats beyond SP78/FLT
+        let validSizes: [UInt32] = [1, 2, 4]
+
         return keys.filter { $0.code.toString().hasPrefix("T") &&
-            ($0.info == DataTypes.SP78 || $0.info == DataTypes.FLT) &&
+            validSizes.contains($0.info.size) &&
             TemperatureSensors.all[$0.code] == nil
         }
         .map { TemperatureSensor(name: "Unknown", code: $0.code) }
@@ -617,14 +621,31 @@ public extension SMCKit {
     {
         var temperatureInCelius: Double
 
-        // Try SP78 format first (Intel Macs)
-        do {
+        // Query the actual data type from SMC before reading
+        let actualType = try keyInformation(sensorCode)
+
+        if actualType == DataTypes.SP78 {
             let data = try readData(SMCKey(code: sensorCode, info: DataTypes.SP78))
             temperatureInCelius = Double(fromSP78: (data.0, data.1))
-        } catch {
-            // If SP78 fails (likely due to type mismatch on Apple Silicon), try FLT format
+        } else if actualType == DataTypes.FLT {
             let data = try readData(SMCKey(code: sensorCode, info: DataTypes.FLT))
             temperatureInCelius = Double(fromFLT: (data.0, data.1, data.2, data.3))
+        } else {
+            // Unknown type: read with the actual type info and interpret by size
+            let data = try readData(SMCKey(code: sensorCode, info: actualType))
+            if actualType.size == 2 {
+                temperatureInCelius = Double(fromSP78: (data.0, data.1))
+            } else if actualType.size == 4 {
+                temperatureInCelius = Double(fromFLT: (data.0, data.1, data.2, data.3))
+            } else {
+                // Single byte or other exotic format - best effort
+                temperatureInCelius = Double(data.0)
+            }
+        }
+
+        // Sanity check: discard obviously invalid readings
+        guard temperatureInCelius > -40, temperatureInCelius < 150 else {
+            return 0
         }
 
         switch unit {

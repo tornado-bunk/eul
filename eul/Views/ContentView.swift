@@ -15,7 +15,7 @@ struct ContentView: View {
     @EnvironmentObject var uiStore: UIStore
 
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             VStack(spacing: 4) {
                 ForEach(Preference.Section.allCases) {
                     Preference.PreferenceSectionView(activeSection: $uiStore.activeSection, section: $0)
@@ -23,10 +23,14 @@ struct ContentView: View {
                 Spacer()
             }
             .padding(.vertical, 20)
-            .padding(.horizontal, 8)
-            .frame(width: 150)
-            .background(Color.controlBackground)
-            ScrollView([.vertical], showsIndicators: !Info.isBigSur) {
+            .padding(.horizontal, 10)
+            .frame(width: 160)
+            .liquidGlassSidebar()
+
+            Divider()
+                .opacity(0.3)
+
+            ScrollView([.vertical], showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 12) {
                     if uiStore.activeSection == .general {
                         SectionView(title: "ui.app".localized()) {
@@ -63,6 +67,7 @@ struct ContentView: View {
             }
             .clipped()
         }
+        .background(.regularMaterial)
         .frame(height: 420)
         .id(preferenceStore.language)
         .preferredColorScheme()

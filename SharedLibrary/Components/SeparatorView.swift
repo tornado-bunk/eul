@@ -17,8 +17,8 @@ public struct SeparatorView: View {
 
     public var body: some View {
         Rectangle()
-            .fill(Color.separator)
-            .frame(height: 1)
+            .fill(Color.separator.opacity(0.4))
+            .frame(height: 0.5)
             .padding(.vertical, padding)
     }
 }

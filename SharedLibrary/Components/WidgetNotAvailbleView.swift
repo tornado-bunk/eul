@@ -19,6 +19,6 @@ public struct WidgetNotAvailbleView: View {
         Text(text)
             .inlineSection()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.controlBackground.opacity(0.98))
+            .background(.regularMaterial)
     }
 }

@@ -33,6 +33,7 @@
 "cpu.idle" = "Idle";
 "cpu.temperature" = "Temp";
 "gpu.temperature" = "GPU Temp";
+"gpu.usage" = "Usage";
 "cpu.info" = "Info";
 "cpu.physical_cores" = "Physical Cores";
 "cpu.logical_cores" = "Logical Cores";
@@ -223,3 +224,9 @@
 "widget.battery.description" = "Display battery information";
 "widget.network.title" = "Network Widget";
 "widget.network.description" = "Display network information";
+"widget.disk.title" = "Disk Widget";
+"widget.disk.description" = "Display disk space information";
+"disk.free" = "free";
+"disk.used" = "used";
+"widget.gpu.title" = "GPU Widget";
+"widget.gpu.description" = "Display GPU information";

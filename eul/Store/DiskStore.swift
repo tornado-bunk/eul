@@ -6,16 +6,11 @@
 //  Copyright © 2020 Gao Sun. All rights reserved.
 //
 
-import Combine
 import Foundation
 import SharedLibrary
-import SwiftUI
+import WidgetKit
 
 class DiskStore: ObservableObject, Refreshable {
-    private var activeCancellable: AnyCancellable?
-
-    @ObservedObject var componentsStore = SharedStore.components
-    @ObservedObject var menuComponentsStore = SharedStore.menuComponents
     var config: EulComponentConfig {
         SharedStore.componentConfig[EulComponent.Disk]
     }
@@ -65,14 +60,28 @@ class DiskStore: ObservableObject, Refreshable {
         return ByteUnit(ceiling, kilo: 1000).readable
     }
 
-    @objc func refresh() {
-        guard
-            componentsStore.activeComponents.contains(.Disk)
-            || menuComponentsStore.activeComponents.contains(.Disk)
-        else {
-            return
+    func writeToContainer() {
+        // Use root volume (/) for the widget instead of summing all volumes
+        let rootTotal: UInt64
+        let rootFree: UInt64
+        if let attrs = try? FileManager.default.attributesOfFileSystem(forPath: "/"),
+           let size = attrs[FileAttributeKey.systemSize] as? UInt64,
+           let free = attrs[FileAttributeKey.systemFreeSize] as? UInt64
+        {
+            rootTotal = size
+            rootFree = free
+        } else {
+            rootTotal = ceilingBytes ?? 0
+            rootFree = freeBytes ?? 0
         }
+        Container.set(DiskEntry(
+            totalBytes: rootTotal,
+            freeBytes: rootFree
+        ))
+        WidgetCenter.shared.reloadTimelines(ofKind: DiskEntry.kind)
+    }
 
+    @objc func refresh() {
         guard let volumes = (try? FileManager.default.contentsOfDirectory(atPath: DiskList.volumesPath)) else {
             list = nil
             return
@@ -101,17 +110,11 @@ class DiskStore: ObservableObject, Refreshable {
                 isEjectable: isEjectable
             )
         })
+
+        writeToContainer()
     }
 
     init() {
         initObserver(for: .StoreShouldRefresh)
-        // refresh immediately to prevent "N/A"
-        activeCancellable = Publishers
-            .CombineLatest(componentsStore.$activeComponents, menuComponentsStore.$activeComponents)
-            .sink { _ in
-                DispatchQueue.main.async {
-                    self.refresh()
-                }
-            }
     }
 }

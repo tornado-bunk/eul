@@ -25,10 +25,7 @@ extension BatteryEntry.PowerSourceState {
 
 enum Info {
     static var isBigSur: Bool {
-        if #available(OSX 11, *) {
-            return true
-        }
-        return false
+        true
     }
 
     struct Battery {

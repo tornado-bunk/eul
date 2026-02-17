@@ -52,7 +52,7 @@ struct MemoryWidgetEntryView: View {
                 }
                 Spacer()
             }
-            .padding(16)
+            .padding(4)
             if !entry.isValid {
                 WidgetNotAvailbleView(text: "widget.not_available".localized())
             }
@@ -67,6 +67,7 @@ struct MemoryWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             MemoryWidgetEntryView(entry: entry)
+                .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("widget.memory.title".localized())
         .description("widget.memory.description".localized())

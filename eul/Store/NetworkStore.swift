@@ -74,9 +74,7 @@ class NetworkStore: ObservableObject, Refreshable {
 
     func writeToContainer() {
         Container.set(NetworkEntry(inSpeedInByte: inSpeedInByte, outSpeedInByte: outSpeedInByte))
-        if #available(OSX 11, *) {
-            WidgetCenter.shared.reloadTimelines(ofKind: NetworkEntry.kind)
-        }
+        WidgetCenter.shared.reloadTimelines(ofKind: NetworkEntry.kind)
     }
 
     init() {

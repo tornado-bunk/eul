@@ -18,7 +18,7 @@ struct PreferredColorScheme: ViewModifier {
     @EnvironmentObject var preferenceStore: PreferenceStore
 
     func body(content: Content) -> some View {
-        if #available(OSX 11, *), let colorScheme = preferenceStore.appearanceMode.colorScheme {
+        if let colorScheme = preferenceStore.appearanceMode.colorScheme {
             return AnyView(content.preferredColorScheme(colorScheme))
         }
         return AnyView(content)
