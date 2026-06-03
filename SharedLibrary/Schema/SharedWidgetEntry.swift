@@ -28,6 +28,6 @@ public extension SharedWidgetEntry {
     }
 
     var isValid: Bool {
-        !outdated && date.timeIntervalSinceNow >= -3
+        !outdated && date.timeIntervalSinceNow >= -60
     }
 }

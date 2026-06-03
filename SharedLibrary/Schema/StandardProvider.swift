@@ -32,10 +32,10 @@ public extension StandardProvider {
     func getTimeline(in _: Context, completion: @escaping (Timeline<WidgetEntry>) -> Void) {
         let entry = Container.get(WidgetEntry.self) ?? WidgetEntry(outdated: true)
         let currentDate = Date()
-        let nextDate = Calendar.current.date(byAdding: .second, value: 10, to: currentDate)!
+        let nextDate = Calendar.current.date(byAdding: .second, value: 60, to: currentDate)!
         let entries: [WidgetEntry] = [entry, WidgetEntry(date: nextDate, outdated: true)]
 
-        let timeline = Timeline(entries: entries, policy: .after(Date().addingTimeInterval(10)))
+        let timeline = Timeline(entries: entries, policy: .after(Date().addingTimeInterval(60)))
         completion(timeline)
     }
 }

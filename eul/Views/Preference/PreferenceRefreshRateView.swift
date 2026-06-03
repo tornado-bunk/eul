@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Preference {
     struct RefreshRateView: View {
-        let allIntervals: [Int] = [1, 3, 5]
+        let allIntervals: [Int] = [1, 3, 5, 15]
         @EnvironmentObject var preference: PreferenceStore
 
         var body: some View {
